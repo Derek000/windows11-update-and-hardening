@@ -1,0 +1,28 @@
+name: CI - Pester & Lint
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set Execution Policy
+        shell: pwsh
+        run: Set-ExecutionPolicy Bypass -Scope Process -Force
+
+      - name: Install Pester & PSScriptAnalyzer
+        shell: pwsh
+        run: |
+          Install-Module Pester -Force -Scope CurrentUser
+          Install-Module PSScriptAnalyzer -Force -Scope CurrentUser
+
+      - name: Lint with PSScriptAnalyzer
+        shell: pwsh
+        run: |
+          Invoke-ScriptAnalyzer -Path . -Recurse -Severity Warning -ErrorAction Continue
+
+      - name: Run Pester
+        shell: pwsh
+        run: Invoke-Pester -Path .\tests -CI
