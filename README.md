@@ -3,7 +3,7 @@
 ## Why
 Timely patching and a sane baseline hardening cut risk from known CVEs and commodity malware. This script updates Windows & apps and applies conservative Defender hardening, with optional stronger controls.
 
-## What it does
+## What it does ----- UPDATRE LOCATIONS -----
 - **Windows Update** (quality & Microsoft Update) via `PSWindowsUpdate`
 - **Winget** sources + upgrades for installed apps (incl. MS Store source)
 - **Microsoft Defender**: signature update, quick scan, conservative hardening (PUA block, cloud protection, MAPS, safe sample submission)
@@ -11,9 +11,9 @@ Timely patching and a sane baseline hardening cut risk from known CVEs and commo
 - **WSL update** (if installed)
 - **Interactive progress**: console banners + spinner-based `Write-Progress` so you can see where time is being spent (disable via `-NoProgress`).
 - **Logging**: 
-  - **Ops log** `C:\ProgramData\Madrock\Update-Strengthen\logs\run_YYYYMMDD_HHMMSS_ops.log`
-  - **Transcript** `C:\ProgramData\Madrock\Update-Strengthen\logs\run_YYYYMMDD_HHMMSS_transcript.log`
-  - Windows Event Log source: `Madrock.UpdateStrengthen`
+  - **Ops log** `C:\ProgramData\XXXX\Update-Strengthen\logs\run_YYYYMMDD_HHMMSS_ops.log`
+  - **Transcript** `C:\ProgramData\XXXX\Update-Strengthen\logs\run_YYYYMMDD_HHMMSS_transcript.log`
+  - Windows Event Log source: `XXXX.UpdateStrengthen`
 
 ## Requirements
 - Windows 11, **run as Administrator**
